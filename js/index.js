@@ -1,6 +1,6 @@
 var itms, itmc, itmk;
 var d1, d2, d3, d4, d5;
-var urx = 'https://raw.githubusercontent.com/deswes2021/westv/main/script/indexk.js';
+
 window.onload = function () {
     d1 = document.getElementsByTagName('body')[0];
     d1.style.backgroundColor = 'black';
@@ -15,23 +15,6 @@ window.onload = function () {
 }
 
 function getk(op) {
-    /*----------------------------------------------------*/
-    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() :
-        (window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : null);
-    if (!xhr) return;
-    xhr.open("GET", urx, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            itmk = eval(xhr.responseText);
-            setk(op);
-        }
-    };
-    xhr.send();
-    /*----------------------------------------------------*/
-    return false;
-}
-
-function setk(op) {
     d1 = document.getElementsByTagName('body')[0];
     d2 = document.createElement('div');
     d2.style.position = 'absolute';
@@ -46,6 +29,7 @@ function setk(op) {
     d1.appendChild(d2);
     itmc = 0;
     itms = 0;
+    itmk = eval(mik);
     /*----------------------------------------------------*/
     for (var i = 0; i < itmk.length; i++) {
         if (itmk[i].tipo === op){
